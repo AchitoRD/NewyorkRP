@@ -3,27 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New York RP | ER:LC - The City That Never Sleeps</title>
+    <title>New York RP | ER:LC</title>
 
+    <!-- 🌐 SEO -->
     <meta name="title" content="New York RP | ER:LC - Roleplay Realista en Roblox" />
-    <meta name="description" content="🗽 Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía, empresas, sistema legal y juicios en Roblox ER:LC. Únete a la mejor comunidad de Nueva York RP." />
-    <meta name="keywords" content="New York RP, ERLC, Roblox RP, roleplay ERLC, Roblox roleplay, NYPD, EMS, DOT, New York Roleplay, RP Roblox español, servidor RP" />
+    <meta
+      name="description"
+      content="Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía, empresas y sistema legal. Únete a la comunidad de New York RP."
+    />
+    <meta name="keywords" content="New York RP, ERLC, Roblox RP, roleplay ERLC, Roblox roleplay, NYPD, EMS, DOT, RP Español" />
     <meta name="author" content="Achitodev" />
     <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="🗽 New York RP | ER:LC 🇺🇸" />
-    <meta property="og:description" content="Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía y sistema legal en Roblox. ¡Únete a la experiencia definitiva!" />
+    <!-- 🌆 SOCIAL PREVIEW -->
+    <meta property="og:title" content="🗽 New York RP | ER:LC" />
+    <meta property="og:description" content="Roleplay realista en Roblox ER:LC — NYPD, EMS, DOT, economía, bandas y juicios. ¡Únete hoy!" />
     <meta property="og:image" content="https://cdn.discordapp.com/banners/1377710554663358494/8fe29d76bb9c131583498961fc9a2eef.png?size=2048" />
     <meta property="og:url" content="https://achitord.github.io/NewyorkRP/" />
-    <meta name="theme-color" content="#5a3d99" />
+    <meta name="theme-color" content="#6e00ff" />
 
+    <!-- 🧠 GOOGLE STRUCTURED DATA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "New York RP",
       "url": "https://achitord.github.io/NewyorkRP/",
-      "logo": "https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048",
+      "logo": "https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png",
       "sameAs": [
         "https://achitord.github.io/NewyorkRP/",
         "https://bit.ly/newyorkrp",
@@ -33,169 +39,109 @@
     }
     </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-
-
     <style>
-      /* Variables de Color para fácil edición */
-      :root {
-        --color-primary: #8a2be2; /* Azul-Violeta principal */
-        --color-secondary: #00bfff; /* Azul Cielo/Neón */
-        --color-dark: #0f0f1a; /* Fondo muy oscuro */
-        --color-text-light: #e0e0f0; /* Texto claro */
-        --font-main: 'Poppins', sans-serif;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
+      /* 🎨 ESTILO GENERAL */
       body {
-        font-family: var(--font-main);
-        color: var(--color-text-light);
-        text-align: center;
+        margin: 0;
         height: 100vh;
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: var(--color-dark) url("https://cdn.discordapp.com/banners/1377710554663358494/8fe29d76bb9c131583498961fc9a2eef.png?size=2048") no-repeat center center;
+        background: url("https://cdn.discordapp.com/banners/1377710554663358494/8fe29d76bb9c131583498961fc9a2eef.png?size=2048")
+          no-repeat center center fixed;
         background-size: cover;
-        position: relative;
-        overflow: hidden;
+        backdrop-filter: brightness(0.5) blur(1px);
       }
 
-      /* Overlay oscuro con menos blur para que se vea mejor el fondo */
+      /* 🏙️ CAPA OSCURA */
       body::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.85); /* Más oscuro */
-        backdrop-filter: blur(3px); /* Menos borroso */
+        background: linear-gradient(180deg, rgba(10, 10, 15, 0.85), rgba(10, 10, 15, 0.9));
         z-index: 0;
       }
 
       .container {
         position: relative;
         z-index: 1;
-        padding: 30px 20px;
-        max-width: 450px;
-        width: 90%; /* Mejor responsividad */
-        background: rgba(15, 15, 26, 0.5); /* Semi-transparente para destacarse */
-        border-radius: 15px;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+        max-width: 90%;
       }
 
       img.logo {
-        width: 120px;
-        height: 120px;
+        width: 130px;
         border-radius: 50%;
-        object-fit: cover;
-        /* Borde y sombra en color primario */
-        border: 4px solid var(--color-primary);
-        box-shadow: 0 0 25px var(--color-primary);
-        margin-bottom: 25px;
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto más "bounce" */
+        box-shadow: 0 0 25px #7b2ff7;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
       }
 
       img.logo:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
 
       h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         margin-bottom: 10px;
-        color: var(--color-secondary);
-        text-shadow: 0 0 15px var(--color-secondary);
-        font-weight: 800;
+        text-shadow: 0 0 15px #7b2ff7;
       }
 
-      p.desc {
-        color: var(--color-text-light);
-        margin-bottom: 35px;
-        font-size: 1rem;
-        line-height: 1.6;
-        font-weight: 400;
+      p {
+        color: #ccc;
+        margin-bottom: 30px;
       }
 
-      .buttons {
+      /* ⚡ BOTONES */
+      .btns {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 15px;
-      }
-
-      a.btn {
-        text-decoration: none;
-        color: #fff; /* Texto blanco en botones */
-        background: var(--color-primary);
-        padding: 15px 25px;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        display: flex; /* Para centrar el icono y texto */
-        align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        border: 2px solid transparent; /* Para el efecto hover */
-        transition: all 0.3s ease;
-      }
-      
-      /* Botón de Discord con color de Discord */
-      a.btn:first-child {
-        background: #5865f2; /* Color oficial de Discord */
-        box-shadow: 0 4px 20px rgba(88, 101, 242, 0.4);
       }
 
-      a.btn:hover {
-        background: transparent;
-        border: 2px solid var(--color-secondary);
-        color: var(--color-secondary);
-        transform: translateY(-3px); /* Pequeño movimiento */
-        box-shadow: 0 6px 30px var(--color-secondary);
-      }
-      
-      a.btn i {
-          margin-right: 10px;
-          font-size: 1.2em;
-      }
-
-      .links {
-        margin-top: 30px;
-        color: #999;
-        font-size: 0.85rem;
-        font-weight: 400;
-      }
-
-      .links a {
-        color: var(--color-secondary);
+      .btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(90deg, #7b2ff7, #3d7eff);
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 40px;
         text-decoration: none;
-        transition: color 0.3s ease;
+        font-weight: 600;
+        box-shadow: 0 0 20px rgba(123, 47, 247, 0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .links a:hover {
-        color: var(--color-primary);
+      .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(123, 47, 247, 0.9);
       }
 
-      /* Responsividad para pantallas pequeñas */
-      @media (max-width: 480px) {
+      .btn img {
+        width: 24px;
+        height: 24px;
+      }
+
+      footer {
+        margin-top: 40px;
+        font-size: 0.8rem;
+        color: #777;
+      }
+
+      @media (max-width: 600px) {
         h1 {
-          font-size: 1.8rem;
+          font-size: 1.4rem;
         }
         img.logo {
           width: 100px;
-          height: 100px;
         }
-        p.desc {
-            font-size: 0.9rem;
-        }
-        a.btn {
-            font-size: 1rem;
-            padding: 12px 20px;
+        .btn {
+          padding: 10px 16px;
         }
       }
     </style>
@@ -204,35 +150,25 @@
   <body>
     <div class="container">
       <img
-        class="logo"
         src="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048"
         alt="Logo New York RP"
+        class="logo"
       />
       <h1>🗽 New York RP | ER:LC</h1>
-      <p class="desc">
-        Vive el roleplay más realista en Roblox. NYPD, EMS, DOT, bandas, sistema
-        legal y mucho más. ¡Únete a la ciudad que nunca duerme!
-      </p>
+      <p>Roleplay realista en Roblox — Policía, EMS, DOT, bandas, economía y más.</p>
 
-      <div class="buttons">
-        <a class="btn" href="https://discord.gg/FfQ8GZFu2w" target="_blank">
-            <i class="fab fa-discord"></i> Entrar al Discord
+      <div class="btns">
+        <a href="https://discord.gg/FfQ8GZFu2w" class="btn">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" />
+          Unirse a Discord
         </a>
-        
-        <a class="btn" href="https://achitord.github.io/NewyorkRP/dashboard" target="_blank">
-            <i class="fas fa-chart-line"></i> Dashboard Oficial
+        <a href="https://achitord.github.io/NewyorkRP/dashboard" class="btn">
+          <img src="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png" alt="Dashboard" />
+          Ir al Dashboard
         </a>
       </div>
 
-      <div class="links">
-        <p>
-          🌐 Enlaces Cortos: <a href="https://bit.ly/newyorkrp">Bit.ly</a> |
-          <a href="https://rebrand.ly/newyorkrp">Rebrand.ly</a>
-        </p>
-        <p>
-            Desarrollado por Achitodev
-        </p>
-      </div>
+      <footer>© 2025 New York RP — Creado por Achitodev</footer>
     </div>
   </body>
 </html>
