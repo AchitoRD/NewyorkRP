@@ -35,77 +35,196 @@
         }
     </script>
 
-    <style>
-      /* --- CORRECCIÓN CRÍTICA --- */
-      /* 1. Forzamos el fondo negro puro con el valor HEX directo */
-      body {
-        min-height: 100vh;
-        background-color: #000000 !important; /* Usamos el valor directo y !important para asegurar */
-        background-image: none !important; 
-        color: white; /* Aseguramos que el texto base sea visible */
-      }
-      
-      /* 2. Forzamos el color de fondo del Preloader también */
-      #preloader {
-        position: fixed;
-        inset: 0;
-        z-index: 9999; /* Alto Z-index para asegurar que esté encima */
-        background-color: #000000 !important; /* Valor HEX directo */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: opacity 0.5s ease-out;
-      }
-      .hidden-preloader {
-        opacity: 0;
-        pointer-events: none;
-      }
-      
-      /* Asegurar que el contenedor principal use el color de Tailwind definido */
-      .main-container {
-        /* Aquí sí podemos usar theme() si está funcionando para las sombras */
-        box-shadow: 0 0 40px rgba(71, 1, 107, 0.5); /* Sombra estática del púrpura */
-        border: 2px solid #00eaff; /* Borde estático del azul neón */
-        background-color: rgba(0, 0, 0, 0.9); /* Fondo del contenedor semi-transparente negro */
-      }
+<style>
+  /* Variables Neón (Se mantienen) */
+  :root {
+    --color-dark: #000000;
+    --color-neon-purple: #bf00ff; /* Púrpura brillante */
+    --color-neon-blue: #00eaff; /* Azul Cian brillante */
+    --color-text: #e0e0e0;
+  }
 
-      /* Estilos para el texto y botones (se mantienen las clases de Tailwind/aplicar) */
-      .text-ny-blue { color: #00eaff; }
-      .text-ny-purple { color: #bf00ff; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-      .btn-neon {
-        /* Usamos valores directos para los botones principales también para asegurar el look */
-        background-color: #000000;
-        color: #00eaff;
-        border: 2px solid #00eaff;
-        box-shadow: 0 0 10px #00eaff;
-        @apply font-semibold transition duration-300 ease-in-out;
-      }
+  /* --- CORRECCIÓN CRÍTICA: FONDO GRADIENTE NEÓN --- */
+  body {
+    min-height: 100vh;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
 
-      .btn-neon:hover {
-        background-color: #00eaff;
-        color: #000000;
-        border-color: #bf00ff;
-        box-shadow: 0 0 20px #bf00ff;
-        transform: translateY(-2px);
-      }
-      
-      .btn-discord {
-          background-color: #5865f2;
-          color: white;
-          border: 2px solid #5865f2;
-          box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
-          @apply transition duration-300 ease-in-out;
-      }
+    /* 1. Gradiente Radial Neón Negro/Morado/Azul */
+    /* Asegura que el fondo sea oscuro con toques de neón desde el centro */
+    background: radial-gradient(
+        circle at center, 
+        rgba(30, 0, 40, 0.9) 0%, /* Morado oscuro en el centro */
+        rgba(0, 5, 25, 0.95) 50%, /* Azul muy oscuro */
+        #000000 100% /* Negro en los bordes */
+    ), 
+    linear-gradient(
+        135deg, 
+        rgba(191, 0, 255, 0.05) 0%, /* Toque sutil de Púrpura Neón */
+        rgba(0, 234, 255, 0.05) 100% /* Toque sutil de Azul Neón */
+    );
+    background-color: #000000 !important; /* Fallback si el gradiente falla */
+  }
 
-      .btn-discord:hover {
-          background-color: #000000;
-          color: #bf00ff;
-          border-color: #bf00ff;
-          box-shadow: 0 0 20px #bf00ff;
-          transform: translateY(-2px);
-      }
-    </style>
+  /* Estilo de Preloader (Se mantiene, pero color de fondo forzado a negro) */
+  #preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: #000000 !important; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.6s ease-out;
+  }
+  .hidden-preloader {
+    opacity: 0 !important;
+    pointer-events: none;
+  }
+  /* Animación del spinner... (Mantenida) */
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .logo-spinner {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--color-neon-blue);
+    box-shadow: 0 0 25px var(--color-neon-blue);
+    animation: spin 1.5s linear infinite;
+  }
+
+
+  /* Contenedor Principal (Marco Neón) */
+  .container {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 420px;
+    padding: 30px 20px;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo del contenedor negro casi opaco */
+    border-radius: 15px;
+    /* Efecto Neón en el Marco */
+    border: 2px solid var(--color-neon-purple);
+    box-shadow: 0 0 30px var(--color-neon-purple), inset 0 0 10px var(--color-neon-purple);
+  }
+
+  /* Logo, H1, Desc, Buttons, Footer... (Estilos se mantienen sin cambios mayores) */
+
+  .logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    border: 3px solid var(--color-neon-blue);
+    box-shadow: 0 0 20px var(--color-neon-blue);
+    transition: transform 0.3s ease;
+  }
+  .logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px var(--color-neon-blue);
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--color-neon-blue);
+    text-shadow: 0 0 10px var(--color-neon-blue), 0 0 20px var(--color-neon-blue);
+  }
+
+  p.desc {
+    color: var(--color-text);
+    margin-bottom: 35px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  a.btn {
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  a.btn i {
+      margin-right: 10px;
+      font-size: 1.2em;
+  }
+
+  /* Botón Discord */
+  a.btn-discord {
+    background: #5865f2; 
+    color: white;
+    border: 2px solid #5865f2;
+  }
+  a.btn-discord:hover {
+    background: var(--color-dark);
+    color: var(--color-neon-purple);
+    border-color: var(--color-neon-purple);
+    box-shadow: 0 0 20px var(--color-neon-purple);
+    transform: translateY(-2px);
+  }
+
+  /* Botón Dashboard */
+  a.btn-dashboard {
+    background: var(--color-dark);
+    color: var(--color-neon-blue);
+    border: 2px solid var(--color-neon-blue);
+    box-shadow: 0 0 15px var(--color-neon-blue);
+  }
+  a.btn-dashboard:hover {
+    background: var(--color-neon-blue);
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+    box-shadow: 0 0 30px var(--color-neon-blue);
+    transform: translateY(-2px);
+  }
+
+  .footer-text {
+    margin-top: 30px;
+    color: var(--color-text);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .footer-text p:last-child {
+    color: var(--color-neon-purple);
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  /* Responsividad */
+  @media (max-width: 400px) {
+    h1 { font-size: 1.8rem; }
+    .logo { width: 100px; height: 100px; }
+    p.desc { font-size: 0.9rem; }
+    a.btn { font-size: 1rem; padding: 12px 20px; }
+  }
+</style>
   </head>
 
   <body class="font-sans antialiased text-white">
@@ -132,7 +251,7 @@
         </h1>
         
         <p class="text-gray-300 mb-8 text-base sm:text-lg leading-relaxed">
-          Vive el roleplay más realista en Roblox. NYPD, EMS, DOT, bandas, sistema
+          Vive el roleplay más realista en Roblox. Us Marshal, Secret Services, Interpol,  EMS, DOT, bandas, sistema
           legal y mucho más. ¡Únete a la ciudad que nunca duerme!
         </p>
 
@@ -152,7 +271,7 @@
 
         <div class="mt-8 pt-4 border-t border-gray-700/50 text-gray-500 text-xs sm:text-sm">
           <p>© 2025 New York RP. Todos los derechos reservados.</p>
-          <p class="mt-1">Diseñado y desarrollado por Achitodev.</p>
+          <p class="mt-1">Diseñado y desarrollado por @achito_dev.</p>
           <p class="mt-3 text-ny-purple">
             <i class="fas fa-search mr-1"></i> Busca "New York RP ER:LC" en Google para encontrarnos.
           </p>
