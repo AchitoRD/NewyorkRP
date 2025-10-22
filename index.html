@@ -7,28 +7,19 @@
 
     <!-- 🧠 SEO GENERAL -->
     <meta name="title" content="New York RP | ER:LC - Roleplay Realista en Roblox" />
-    <meta
-      name="description"
-      content="🗽 Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía, empresas, sistema legal y juicios en Roblox ER:LC. Únete a la mejor comunidad de Nueva York RP."
-    />
+    <meta name="description" content="🗽 Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía, empresas, sistema legal y juicios en Roblox ER:LC. Únete a la mejor comunidad de Nueva York RP." />
     <meta name="keywords" content="New York RP, ERLC, Roblox RP, roleplay ERLC, Roblox roleplay, NYPD, EMS, DOT, New York Roleplay, RP Roblox español, servidor RP" />
     <meta name="author" content="Achitodev" />
     <meta name="robots" content="index, follow" />
 
-    <!-- 🧩 OPEN GRAPH (Discord, WhatsApp, etc) -->
+    <!-- 🧩 OPEN GRAPH -->
     <meta property="og:title" content="🗽 New York RP | ER:LC 🇺🇸" />
-    <meta
-      property="og:description"
-      content="Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía, sistema legal y eventos diarios. ¡Únete ya a NYC RP!"
-    />
-    <meta
-      property="og:image"
-      content="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048"
-    />
+    <meta property="og:description" content="Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía y sistema legal en Roblox. ¡Únete a la experiencia definitiva!" />
+    <meta property="og:image" content="https://cdn.discordapp.com/banners/1377710554663358494/8fe29d76bb9c131583498961fc9a2eef.png?size=2048" />
     <meta property="og:url" content="https://achitord.github.io/NewyorkRP/" />
     <meta name="theme-color" content="#00ff99" />
 
-    <!-- 🕷️ ENLACES PARA GOOGLE / RICH RESULTS -->
+    <!-- 🕷️ RICH DATA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -45,54 +36,139 @@
     }
     </script>
 
-    <!-- 🚀 REDIRECCIÓN AUTOMÁTICA -->
-    <meta http-equiv="refresh" content="3; url=https://discord.gg/FfQ8GZFu2w" />
-
+    <!-- 🎨 ESTILOS -->
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
-        background-color: #000;
-        color: #00ff99;
         font-family: "Courier New", monospace;
+        color: #00ff99;
+        text-align: center;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        text-align: center;
+        background: url("https://cdn.discordapp.com/banners/1377710554663358494/8fe29d76bb9c131583498961fc9a2eef.png?size=2048") no-repeat center center/cover;
+        position: relative;
+        overflow: hidden;
       }
-      img {
-        width: 120px;
+
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(6px);
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        max-width: 500px;
+      }
+
+      img.logo {
+        width: 140px;
         border-radius: 50%;
-        box-shadow: 0 0 20px #00ff99;
+        box-shadow: 0 0 30px #00ff99;
         margin-bottom: 20px;
+        transition: transform 0.3s ease;
       }
+
+      img.logo:hover {
+        transform: scale(1.05);
+      }
+
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 10px;
+        color: #00ffcc;
+        text-shadow: 0 0 10px #00ffcc;
       }
-      p {
-        color: #aaa;
+
+      p.desc {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 0.95rem;
+        line-height: 1.5;
       }
-      a {
-        color: #00ff99;
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      a.btn {
         text-decoration: none;
+        color: #000;
+        background: #00ff99;
+        padding: 12px 25px;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 0 0 15px #00ff99;
+        transition: all 0.3s ease;
+      }
+
+      a.btn:hover {
+        background: #00ffaa;
+        transform: scale(1.05);
+        box-shadow: 0 0 25px #00ffaa;
+      }
+
+      .links {
+        margin-top: 25px;
+        color: #888;
+        font-size: 0.9rem;
+      }
+
+      .links a {
+        color: #00ffcc;
+        text-decoration: none;
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 1.4rem;
+        }
+        img.logo {
+          width: 110px;
+        }
       }
     </style>
   </head>
 
   <body>
-    <img
-      src="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048"
-      alt="Logo New York RP"
-    />
-    <h1>🗽 New York RP | ER:LC</h1>
-    <p>Redirigiendo al servidor de Discord...</p>
+    <div class="container">
+      <img
+        class="logo"
+        src="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048"
+        alt="Logo New York RP"
+      />
+      <h1>🗽 New York RP | ER:LC</h1>
+      <p class="desc">
+        Vive el roleplay más realista en Roblox. NYPD, EMS, DOT, bandas, sistema
+        legal y mucho más. ¡Únete a la ciudad que nunca duerme!
+      </p>
 
-    <!-- 🧭 ENLACES OFICIALES -->
-    <p>
-      <a href="https://achitord.github.io/NewyorkRP/">🌐 Sitio Principal</a> |
-      <a href="https://bit.ly/newyorkrp">🔗 Bit.ly</a> |
-      <a href="https://rebrand.ly/newyorkrp">🔗 Rebrand.ly</a>
-    </p>
+      <div class="buttons">
+        <a class="btn" href="https://discord.gg/FfQ8GZFu2w" target="_blank">🎯 Entrar al Discord</a>
+        <a class="btn" href="https://achitord.github.io/NewyorkRP/dashboard" target="_blank">📊 Dashboard Oficial</a>
+      </div>
+
+      <div class="links">
+        <p>
+          🌐 <a href="https://bit.ly/newyorkrp">Bit.ly</a> |
+          <a href="https://rebrand.ly/newyorkrp">Rebrand.ly</a>
+        </p>
+      </div>
+    </div>
   </body>
 </html>
