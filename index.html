@@ -7,7 +7,7 @@
 
     <link rel="icon" type="image/png" href="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048">
 
-    <meta property="og:title" content="🗽 New York RP | ER:LC 🇺🇸" />
+    <meta property="og:title" content="🗽 Bienvenido a New York RP | ER:LC 🇺🇸" />
     <meta property="og:description" content="Vive el roleplay más realista con NYPD, EMS, DOT, facciones criminales, economía, sistema legal y juicios en Roblox ER:LC. ¡La ciudad que nunca duerme te espera!" />
     <meta property="og:image" content="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048" /> 
     <meta name="theme-color" content="#bf00ff" />
@@ -57,6 +57,7 @@
     align-items: center;
     text-align: center;
     overflow-x: hidden;
+    /* Fondo con efecto gradiente neón */
     background: radial-gradient(circle at center, rgba(30, 0, 40, 0.9) 0%, rgba(0, 5, 25, 0.95) 50%, #000000 100%), 
     linear-gradient(135deg, rgba(191, 0, 255, 0.05) 0%, rgba(0, 234, 255, 0.05) 100%);
     background-color: #000000;
@@ -84,18 +85,32 @@
       font-weight: 900;
   }
 
-  /* Negritas Estilizadas */
+  /* Negritas Estilizadas (USADO EN TEXTOS) */
   .neon-bold {
       color: var(--color-neon-blue); 
       font-weight: 900;
       text-shadow: 0 0 5px var(--color-neon-blue);
   }
 
+  /* Negritas Estilizadas para Botones (Asegura que el texto esté siempre visible) */
+  .btn-neon-bold-blue {
+    color: var(--color-neon-blue);
+    font-weight: 900;
+    text-shadow: none; /* Quitamos el shadow para evitar conflicto visual en botón */
+    transition: color 0.3s;
+  }
+  .btn-neon-bold-purple {
+    color: var(--color-neon-purple);
+    font-weight: 900;
+    text-shadow: none;
+    transition: color 0.3s;
+  }
+
   /* Video de TikTok (Responsive y Centrado) */
   .tiktok-container {
       position: relative;
       width: 100%;
-      padding-bottom: 177.77%; 
+      padding-bottom: 177.77%; /* 9:16 aspect ratio */
       height: 0;
       overflow: hidden;
       border-radius: 10px;
@@ -137,7 +152,10 @@
       top: 50%;
       transform: translateY(-50%);
       transition: opacity 0.3s;
+      z-index: 20; /* Asegura que los botones estén sobre la imagen */
   }
+  
+  /* Estilos del FAQ */
   .faq-answer {
       max-height: 0;
   }
@@ -155,7 +173,7 @@
 
     <div class="relative z-10 flex flex-col items-center w-full">
       
-      <section id="intro" class="p-4 sm:p-6 w-full max-w-lg mb-12 mt-12 section-container rounded-xl shadow-2xl">
+      <section id="intro" class="p-6 sm:p-8 w-11/12 max-w-sm sm:max-w-lg mb-12 mt-12 section-container rounded-xl shadow-2xl">
         
         <img
           class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-ny-purple shadow-xl shadow-ny-purple transition-transform duration-300 hover:scale-110"
@@ -168,31 +186,33 @@
         </h1>
         
         <p class="text-ny-gray mb-8 text-lg sm:text-xl leading-relaxed">
-          Vive el roleplay <strong class="neon-bold">más realista</strong> con sistemas avanzados y facciones exclusivas. **¡La ciudad que nunca duerme te espera!**
+          Vive el roleplay <strong class="neon-bold">más realista</strong> con sistemas avanzados y facciones exclusivas. <strong class="neon-bold">¡La ciudad que nunca duerme te espera!</strong>
         </p>
 
         <div class="flex flex-col space-y-4">
           
-          <a class="p-4 rounded-xl text-lg flex items-center justify-center bg-discord-blue text-white border-2 border-discord-blue hover:bg-ny-dark hover:text-ny-purple hover:border-ny-purple hover:shadow-2xl hover:shadow-ny-purple/50 transition-all duration-300" 
+          <a class="p-4 rounded-xl text-lg flex items-center justify-center bg-discord-blue text-white border-2 border-discord-blue hover:bg-ny-dark hover:border-ny-purple hover:shadow-2xl hover:shadow-ny-purple/50 transition-all duration-300" 
               href="https://discord.gg/FfQ8GZFu2w" target="_blank">
-              <i class="fab fa-discord mr-3"></i> Entrar al <strong class="neon-bold text-white shadow-none ml-1">Discord Oficial</strong>
+              <i class="fab fa-discord mr-3"></i> Entrar al <strong class="text-white ml-1 hover:text-ny-purple transition-colors duration-300 font-extrabold">Discord Oficial</strong>
           </a>
           
-          <a class="p-4 rounded-xl text-lg flex items-center justify-center bg-ny-dark text-ny-blue border-2 border-ny-blue shadow-lg shadow-ny-blue/50 hover:bg-ny-blue hover:text-ny-dark hover:border-ny-dark transition-all duration-300" 
+          <a class="p-4 rounded-xl text-lg flex items-center justify-center bg-ny-dark border-2 border-ny-blue shadow-lg shadow-ny-blue/50 hover:bg-ny-blue hover:text-ny-dark hover:border-ny-dark transition-all duration-300" 
               href="https://policeroleplay.community/join?code=CyNyRp&placeId=2534724415" target="_blank">
-              <i class="fas fa-gamepad mr-3"></i> <strong class="neon-bold text-ny-blue hover:text-ny-dark shadow-none ml-1">Jugar</strong> en Roblox ER:LC
+              <i class="fas fa-gamepad mr-3 btn-neon-bold-blue hover:text-ny-dark"></i> 
+              <strong class="btn-neon-bold-blue ml-1 hover:text-ny-dark">Jugar</strong> en Roblox ER:LC
           </a>
 
-          <a class="p-4 rounded-xl text-lg flex items-center justify-center bg-ny-dark text-ny-purple border-2 border-ny-purple shadow-lg shadow-ny-purple/50 hover:bg-ny-purple hover:text-ny-dark hover:border-ny-dark transition-all duration-300" 
+          <a class="p-4 rounded-xl text-lg flex items-center justify-center bg-ny-dark border-2 border-ny-purple shadow-lg shadow-ny-purple/50 hover:bg-ny-purple hover:text-ny-dark hover:border-ny-dark transition-all duration-300" 
               href="https://dashboard.newyorkrp.com" target="_blank">
-              <i class="fas fa-tachometer-alt mr-3"></i> <strong class="neon-bold text-ny-purple hover:text-ny-dark shadow-none ml-1">Dashboard Oficial</strong>
+              <i class="fas fa-tachometer-alt mr-3 btn-neon-bold-purple hover:text-ny-dark"></i> 
+              <strong class="btn-neon-bold-purple ml-1 hover:text-ny-dark">Dashboard Oficial</strong>
           </a>
           
         </div>
 
       </section>
 
-      <section id="gallery" class="bg-ny-dark/70 py-16">
+      <section id="gallery" class="bg-ny-dark/70 py-16 w-full">
           <h2 class="section-title">Galería de <strong class="neon-bold text-ny-purple shadow-none">Rol</strong></h2>
           
           <div class="relative px-4 sm:px-8 carousel-wrapper">
@@ -224,11 +244,11 @@
               </button>
 
               <div id="carousel-dots" class="flex justify-center mt-6 space-x-2">
-                  </div>
+              </div>
           </div>
       </section>
 
-      <section id="verification" class="p-4 sm:p-6 w-full max-w-lg mt-12 section-container rounded-xl shadow-2xl">
+      <section id="verification" class="p-6 sm:p-8 w-11/12 max-w-sm sm:max-w-lg mt-12 section-container rounded-xl shadow-2xl">
           <h2 class="section-title">Guía de <strong class="neon-bold text-ny-purple shadow-none">Verificación</strong></h2>
           
           <p class="text-ny-gray mb-8 text-lg leading-relaxed">
@@ -247,18 +267,18 @@
           </div>
 
           <div class="flex flex-col space-y-4">
-              <a class="p-3 rounded-lg text-base flex items-center justify-center bg-ny-dark text-ny-blue border-2 border-ny-blue hover:bg-ny-blue hover:text-ny-dark transition-all duration-300 shadow-lg shadow-ny-blue/50" 
+              <a class="p-3 rounded-lg text-base flex items-center justify-center bg-ny-dark border-2 border-ny-blue hover:bg-ny-blue hover:text-ny-dark transition-all duration-300 shadow-lg shadow-ny-blue/50" 
                   href="https://www.tiktok.com/@newyorkrpoficial/video/7544202927737408775" target="_blank">
-                  <i class="fab fa-tiktok mr-3"></i> Ver Video de TikTok
+                  <i class="fab fa-tiktok mr-3 btn-neon-bold-blue hover:text-ny-dark"></i> Ver Video de <strong class="btn-neon-bold-blue hover:text-ny-dark ml-1">TikTok</strong>
               </a>
-              <a class="p-3 rounded-lg text-base flex items-center justify-center bg-ny-dark text-ny-purple border-2 border-ny-purple hover:bg-ny-purple hover:text-ny-dark transition-all duration-300 shadow-lg shadow-ny-purple/50" 
+              <a class="p-3 rounded-lg text-base flex items-center justify-center bg-ny-dark border-2 border-ny-purple hover:bg-ny-purple hover:text-ny-dark transition-all duration-300 shadow-lg shadow-ny-purple/50" 
                   href="https://www.roblox.com/es/communities/389846192/New-York-RP-OFICIAL#!/about" target="_blank">
-                  <i class="fab fa-roblox mr-3"></i> Unirse al Grupo de Roblox
+                  <i class="fab fa-roblox mr-3 btn-neon-bold-purple hover:text-ny-dark"></i> Unirse al Grupo de <strong class="btn-neon-bold-purple hover:text-ny-dark ml-1">Roblox</strong>
               </a>
           </div>
       </section>
 
-      <section id="faq" class="p-4 sm:p-6 w-full max-w-lg mt-12 mb-12 section-container rounded-xl shadow-2xl">
+      <section id="faq" class="p-6 sm:p-8 w-11/12 max-w-sm sm:max-w-lg mt-12 mb-12 section-container rounded-xl shadow-2xl">
           <h2 class="section-title">Preguntas <strong class="neon-bold text-ny-purple shadow-none">Frecuentes</strong></h2>
 
           <div class="faq-list w-full text-left">
@@ -320,9 +340,9 @@
               // Cierra los demás ítems
               document.querySelectorAll('.faq-item').forEach(other => {
                   if (other !== item) {
-                       other.classList.remove('active'); 
-                       other.querySelector('.faq-question i').style.transform = null;
-                       other.querySelector('.faq-answer').style.maxHeight = null;
+                      other.classList.remove('active'); 
+                      other.querySelector('.faq-question i').style.transform = null;
+                      other.querySelector('.faq-answer').style.maxHeight = null;
                   }
               });
 
@@ -332,7 +352,8 @@
 
               if (item.classList.contains('active')) {
                   // Muestra el panel
-                  answer.style.maxHeight = answer.scrollHeight + 30 + "px"; // +30px de margen
+                  // Utilizamos scrollHeight para asegurar que el contenido se vea completo
+                  answer.style.maxHeight = answer.scrollHeight + 30 + "px"; 
                   icon.style.transform = 'rotate(180deg)';
               } else {
                   // Esconde el panel
