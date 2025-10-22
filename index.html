@@ -9,15 +9,9 @@
 
     <meta name="title" content="New York RP | ER:LC - Roleplay Realista en Roblox" />
     <meta name="description" content="🗽 Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía, empresas, sistema legal y juicios en Roblox ER:LC. Únete a la mejor comunidad de Nueva York RP." />
-    <meta name="keywords" content="New York RP, ERLC, Roblox RP, roleplay ERLC, Roblox roleplay, NYPD, EMS, DOT, New York Roleplay, RP Roblox español, servidor RP" />
-    <meta name="author" content="Achitodev" />
-    <meta name="robots" content="index, follow" /> 
-
     <meta property="og:title" content="🗽 New York RP | ER:LC 🇺🇸" />
-    <meta property="og:description" content="Vive el roleplay más realista con NYPD, EMS, DOT, bandas, economía y sistema legal en Roblox. ¡Únete a la experiencia definitiva!" />
     <meta property="og:image" content="https://cdn.discordapp.com/icons/1377710554663358494/7fee8a4b820eb729b4e9a47d8087bcd2.png?size=2048" /> 
-    <meta property="og:url" content="https://achitord.github.io/NewyorkRP/" />
-    <meta name="theme-color" content="#5a3d99" /> 
+    <meta name="theme-color" content="#000000" />
     <meta name="twitter:card" content="summary_large_image"> 
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,14 +22,12 @@
           theme: {
             extend: {
               colors: {
-                // Colores NEÓN ajustados
-                'ny-purple': '#bf00ff', // Púrpura Neón (Más vibrante)
-                'ny-blue': '#00eaff',   // Azul Neón (Cian)
+                'ny-purple': '#bf00ff', // Púrpura Neón
+                'ny-blue': '#00eaff',   // Azul Neón
                 'ny-dark': '#000000',   // Fondo Negro Absoluto
                 'discord-blue': '#5865f2',
               },
               animation: {
-                // Animación de giro para el Preloader
                 spin: 'spin 1.5s linear infinite',
               },
             }
@@ -44,25 +36,21 @@
     </script>
 
     <style>
-      /* 1. ELIMINACIÓN DEL FONDO, solo negro total */
+      /* --- CORRECCIÓN CRÍTICA --- */
+      /* 1. Forzamos el fondo negro puro con el valor HEX directo */
       body {
         min-height: 100vh;
-        background-color: theme('colors.ny-dark'); 
-        /* Eliminamos todas las propiedades de background-image */
+        background-color: #000000 !important; /* Usamos el valor directo y !important para asegurar */
         background-image: none !important; 
+        color: white; /* Aseguramos que el texto base sea visible */
       }
       
-      /* Eliminar el overlay y blur, ya no son necesarios sin imagen de fondo */
-      .bg-overlay {
-        display: none;
-      }
-
-      /* Estilo del Preloader */
+      /* 2. Forzamos el color de fondo del Preloader también */
       #preloader {
         position: fixed;
         inset: 0;
-        z-index: 50; 
-        background-color: theme('colors.ny-dark'); 
+        z-index: 9999; /* Alto Z-index para asegurar que esté encima */
+        background-color: #000000 !important; /* Valor HEX directo */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -72,34 +60,50 @@
         opacity: 0;
         pointer-events: none;
       }
-
-      /* Estilo del Contenedor Principal (Para que no sea completamente transparente) */
+      
+      /* Asegurar que el contenedor principal use el color de Tailwind definido */
       .main-container {
-        /* Borde Neón y sombra */
-        box-shadow: 0 0 40px rgba(theme('colors.ny-purple'), 0.5); 
-        border: 2px solid theme('colors.ny-blue');
+        /* Aquí sí podemos usar theme() si está funcionando para las sombras */
+        box-shadow: 0 0 40px rgba(71, 1, 107, 0.5); /* Sombra estática del púrpura */
+        border: 2px solid #00eaff; /* Borde estático del azul neón */
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo del contenedor semi-transparente negro */
       }
 
-      /* Estilo de Botones para el Efecto Neón */
+      /* Estilos para el texto y botones (se mantienen las clases de Tailwind/aplicar) */
+      .text-ny-blue { color: #00eaff; }
+      .text-ny-purple { color: #bf00ff; }
+
       .btn-neon {
-        /* Color de fondo oscuro y texto neón */
-        @apply bg-ny-dark text-ny-blue font-semibold border-2 border-ny-blue shadow-lg shadow-ny-blue/50 transition duration-300 ease-in-out;
+        /* Usamos valores directos para los botones principales también para asegurar el look */
+        background-color: #000000;
+        color: #00eaff;
+        border: 2px solid #00eaff;
+        box-shadow: 0 0 10px #00eaff;
+        @apply font-semibold transition duration-300 ease-in-out;
       }
 
       .btn-neon:hover {
-        /* Invertir colores en hover */
-        @apply bg-ny-blue text-ny-dark border-ny-purple shadow-xl shadow-ny-purple/80;
+        background-color: #00eaff;
+        color: #000000;
+        border-color: #bf00ff;
+        box-shadow: 0 0 20px #bf00ff;
         transform: translateY(-2px);
       }
       
-      /* Botón de Discord con su color */
       .btn-discord {
-          @apply bg-discord-blue text-white border-discord-blue shadow-discord-blue/50;
+          background-color: #5865f2;
+          color: white;
+          border: 2px solid #5865f2;
+          box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+          @apply transition duration-300 ease-in-out;
       }
 
       .btn-discord:hover {
-          /* Neón Púrpura en hover para el botón de Discord */
-          @apply bg-ny-dark text-ny-purple border-ny-purple shadow-xl shadow-ny-purple/80;
+          background-color: #000000;
+          color: #bf00ff;
+          border-color: #bf00ff;
+          box-shadow: 0 0 20px #bf00ff;
+          transform: translateY(-2px);
       }
     </style>
   </head>
@@ -115,7 +119,7 @@
     </div>
 
     <div class="relative z-10 flex items-center justify-center min-h-screen p-4 sm:p-6">
-      <div class="main-container w-full max-w-md p-6 sm:p-8 bg-ny-dark/90 rounded-xl shadow-2xl">
+      <div class="main-container w-full max-w-md p-6 sm:p-8 rounded-xl shadow-2xl">
         
         <img
           class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-ny-purple shadow-xl shadow-ny-purple transition-transform duration-300 hover:scale-110"
@@ -123,7 +127,7 @@
           alt="Logo New York RP"
         />
         
-        <h1 class="text-3xl sm:text-4xl font-extrabold mb-3 text-ny-blue drop-shadow-lg shadow-ny-blue/80">
+        <h1 class="text-3xl sm:text-4xl font-extrabold mb-3 text-ny-blue drop-shadow-lg" style="text-shadow: 0 0 10px #00eaff;">
             🗽 New York RP | ER:LC
         </h1>
         
@@ -134,12 +138,12 @@
 
         <div class="flex flex-col space-y-4">
           
-          <a class="p-4 rounded-xl text-lg flex items-center justify-center transition duration-300 btn-discord hover:shadow-xl" 
+          <a class="p-4 rounded-xl text-lg flex items-center justify-center btn-discord" 
              href="https://discord.gg/FfQ8GZFu2w" target="_blank">
               <i class="fab fa-discord mr-3"></i> Entrar al Discord
           </a>
           
-          <a class="p-4 rounded-xl text-lg flex items-center justify-center transition duration-300 btn-neon" 
+          <a class="p-4 rounded-xl text-lg flex items-center justify-center btn-neon" 
              href="https://achitord.github.io/NewyorkRP/dashboard" target="_blank">
               <i class="fas fa-chart-line mr-3"></i> Dashboard Oficial
           </a>
@@ -157,6 +161,7 @@
     </div>
 
     <script>
+      // El script del preloader es correcto y se mantiene igual.
       window.addEventListener('load', () => {
         const preloader = document.getElementById('preloader');
         preloader.classList.add('hidden-preloader');
