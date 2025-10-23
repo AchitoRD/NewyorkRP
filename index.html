@@ -12,23 +12,35 @@
     <meta name="theme-color" content="#bf00ff" />
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preload" as="image" href="https://cdn.discordapp.com/attachments/1400993344473010282/1430658971760590889/image.png?ex=68fa947f&is=68f942ff&hm=3187d3f7a2fb4944c15813d8c08cf07f2ff920ef9e2caebe7a49713af7c0e39b&">
+    <script src="https://cdn.tailwindcss.com" defer></script> 
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ny-purple': '#bf00ff',
+                        'ny-blue': '#00eaff',
+                        'ny-dark': '#000000',
+                        'discord-blue': '#5865f2',
+                        'ny-gray': '#e0e0e0',
+                    },
+                }
+            }
+        }
+    </script>
+    
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /></noscript>
 
+    <link rel="preload" as="image" href="https://cdn.discordapp.com/attachments/1400993344473010282/1430658971760590889/image.png?ex=68fa947f&is=68f942ff&hm=3187d3f7a2fb4944c15813d8c08cf07f2ff920ef9e2caebe7a49713af7c0e39b&">
+
 
     <style>
-        /* CONFIGURACIÓN DE TAILWIND (Extraído del script original) */
-        /* En un entorno de producción, esto iría en un archivo de configuración para generar el CSS final */
         :root {
+            /* Mapeo de colores de Tailwind a variables CSS para el Neón */
             --ny-purple: #bf00ff;
             --ny-blue: #00eaff;
-            --ny-dark: #000000;
-            --discord-blue: #5865f2;
-            --ny-gray: #e0e0e0;
-
-            /* Variables Neón */
             --color-dark: #000000;
             --color-neon-purple: var(--ny-purple);
             --color-neon-blue: var(--ny-blue);
@@ -41,43 +53,38 @@
             box-sizing: border-box;
         }
 
-        /* OPTIMIZACIÓN: Carga diferida de la fuente, pero el navegador usa Arial mientras */
         body {
             min-height: 100vh;
             color: white;
-            /* 💡 Sugerencia: Usar una fuente de Google Fonts con font-display: swap si quieres algo más estético */
-            font-family: 'Arial', sans-serif; 
+            font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             overflow-x: hidden;
-            /* Fondo con efecto gradiente neón */
             background: radial-gradient(circle at center, rgba(30, 0, 40, 0.9) 0%, rgba(0, 5, 25, 0.95) 50%, #000000 100%),
             linear-gradient(135deg, rgba(191, 0, 255, 0.05) 0%, rgba(0, 234, 255, 0.05) 100%);
             background-color: #000000;
         }
 
-        /* Contenedor principal con el marco neón */
         .section-container {
             background-color: rgba(0, 0, 0, 0.95);
             border: 2px solid var(--color-neon-purple);
             box-shadow: 0 0 30px var(--color-neon-purple), inset 0 0 10px var(--color-neon-purple);
         }
 
-        /* Estilo General de Secciones */
         section {
             width: 100%;
             padding: 60px 0;
         }
 
-        /* ✅ MEJORA DE NEÓN #1: Títulos de sección (efecto púrpura fuerte) */
+        /* ✅ NEÓN MEJORADO: Títulos de sección (efecto púrpura fuerte) */
         .section-title {
             font-size: 2.2rem;
             margin-bottom: 30px;
             color: var(--color-text); /* Color base del texto */
             font-weight: 900;
-            /* Múltiples sombras para el resplandor completo (tubo blanco + aura púrpura) */
+            /* Múltiples sombras para el resplandor completo */
             text-shadow:
                 0 0 5px var(--color-text), /* Centro más brillante (tubo) */
                 0 0 10px var(--color-neon-purple),
@@ -85,9 +92,8 @@
                 0 0 40px rgba(191, 0, 255, 0.6); /* Aura difusa */
         }
 
-        /* ✅ MEJORA DE NEÓN #2: Negritas Estilizadas (USADO EN TEXTOS) - Efecto azul fuerte */
+        /* ✅ NEÓN MEJORADO: Negritas Estilizadas (USADO EN TEXTOS) - Efecto azul fuerte */
         .neon-bold {
-            /* Usar el azul para el color base para un mejor contraste y accesibilidad */
             color: var(--color-neon-blue);
             font-weight: 900;
             /* Múltiples sombras para el resplandor azul */
@@ -96,8 +102,8 @@
                 0 0 10px var(--color-neon-blue),
                 0 0 20px rgba(0, 234, 255, 0.7);
         }
-        
-        /* Ajuste para el título principal: Se le quita el 'style' inline al H1 */
+
+        /* Nueva clase para el Título Principal */
         .main-title-neon {
             color: var(--color-neon-blue);
             text-shadow:
@@ -105,7 +111,7 @@
                 0 0 30px rgba(0, 234, 255, 0.8);
         }
 
-        /* Negritas Estilizadas para Botones (Asegura que el texto esté siempre visible) */
+        /* Negritas Estilizadas para Botones (sin sombra de texto para no chocar con el color) */
         .btn-neon-bold-blue {
             color: var(--color-neon-blue);
             font-weight: 900;
@@ -176,9 +182,10 @@
             transform: rotate(180deg);
         }
     </style>
-    </head>
+</head>
 
 <body class="font-sans antialiased text-white">
+
     <div id="preloader" class="transition-opacity duration-500 fixed inset-0 z-[9999] bg-ny-dark flex justify-center items-center opacity-1">
         <i class="fas fa-spinner fa-spin text-ny-blue text-5xl shadow-lg shadow-ny-blue"></i>
     </div>
@@ -340,7 +347,6 @@
 
     <script defer>
         // 1. Script del Preloader
-        // El preloader está bien ya que usa 'load' event.
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             preloader.classList.add('opacity-0');
