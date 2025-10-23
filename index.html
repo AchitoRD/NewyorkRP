@@ -163,12 +163,20 @@
       transform: rotate(180deg);
   }
 
-  /* Estilos para el Bloque de Normativa Fija */
+  /* Estilos para el Bloque de Normativa Fija (CORREGIDOS) */
+  .normativa-box {
+      /* Estilo base neón para la caja */
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 2px solid var(--color-neon-purple);
+      box-shadow: 0 0 15px var(--color-neon-purple);
+      padding: 8px; /* Espaciado interno */
+  }
   .normativa-btn {
       transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
   }
   .normativa-btn:hover {
-      transform: scale(1.05);
+      transform: scale(1.1); /* Hacemos que se agrande un poco más al pasar el mouse */
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
   }
 </style>
   </head>
@@ -179,20 +187,26 @@
         <i class="fas fa-spinner fa-spin text-ny-blue text-5xl shadow-lg shadow-ny-blue"></i>
     </div>
 
-    <div class="fixed top-4 left-4 z-50 flex flex-col items-start space-y-2">
-        <span class="text-xs font-bold text-ny-purple uppercase tracking-wider hidden sm:block">Normativa RP</span>
-        
-        <a href="https://discord.gg/FfQ8GZFu2w" target="_blank" title="Normativa Discord" 
-           class="normativa-btn p-2 rounded-full bg-discord-blue shadow-lg shadow-discord-blue/50 hover:bg-discord-blue/80">
-            <i class="fab fa-discord text-xl text-white"></i>
-        </a>
+    <div class="fixed top-4 left-4 z-50 normativa-box rounded-xl">
+        <div class="flex items-center space-x-2">
+            <span class="text-sm font-bold text-ny-purple uppercase tracking-wider whitespace-nowrap">
+                Normativa New York RP
+            </span>
+            
+            <div class="flex space-x-2">
+                <a href="https://discord.gg/FfQ8GZFu2w" target="_blank" title="Normativa Discord" 
+                   class="normativa-btn p-1.5 rounded-full bg-discord-blue shadow-lg shadow-discord-blue/50 hover:bg-discord-blue/80">
+                    <i class="fab fa-discord text-2xl text-white"></i>
+                </a>
 
-        <a href="https://policeroleplay.community/join?code=CyNyRp&placeId=2534724415" target="_blank" title="Normativa ER:LC"
-           class="normativa-btn p-2 rounded-full bg-ny-purple shadow-lg shadow-ny-purple/50 hover:bg-ny-purple/80">
-            <img src="https://cdn.discordapp.com/attachments/1381394299220132020/1430710054394527825/image.png?ex=68fac412&is=68f97292&hm=431e7027960a84cc51355b512518d3b0596aed83fa6a4be0b8064fedadc7f4fc" 
-                 alt="Icono ER:LC" 
-                 class="w-5 h-5 object-cover">
-        </a>
+                <a href="https://policeroleplay.community/join?code=CyNyRp&placeId=2534724415" target="_blank" title="Normativa ER:LC"
+                   class="normativa-btn p-1.5 rounded-full bg-ny-purple shadow-lg shadow-ny-purple/50 hover:bg-ny-purple/80">
+                    <img src="https://cdn.discordapp.com/attachments/1381394299220132020/1430710054394527825/image.png?ex=68fac412&is=68f97292&hm=431e7027960a84cc51355b512518d3b0596aed83fa6a4be0b8064fedadc7f4fc" 
+                         alt="Icono ER:LC" 
+                         class="w-7 h-7 object-cover">
+                </a>
+            </div>
+        </div>
     </div>
 
     <div class="relative z-10 flex flex-col items-center w-full">
